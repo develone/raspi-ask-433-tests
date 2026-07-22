@@ -1,0 +1,49 @@
+This is a C library for Raspberry Pi (RPi). It provides access to 
+GPIO and other IO functions on the Broadcom BCM 2835 chip.
+allowing access to the 
+26 pin ISE plug on the RPi board so you can control and interface with various
+external devices.
+
+http://www.airspayce.com/mikem/bcm2835/
+Downloaded bcm2835-1.75.tar.gz
+tar xvfz bcm2835-1.75.tar.gz
+cd bcm2835-1.75/
+make
+sudo make install
+devel@pi4-60:~/bcm2835-1.75 $ cd ~/raspi-ask-433-tests/RadioHead/examples/raspi/multi_server/
+
+devel@pi4-60:~/raspi-ask-433-tests/RadioHead/examples/raspi/multi_server $ make
+g++ -DRASPBERRY_PI -DBCM2835_NO_DELAY_COMPATIBILITY -D__BASEFILE__=\"multi_server\" -c -I../../.. multi_server.cpp
+g++ -DRASPBERRY_PI -DBCM2835_NO_DELAY_COMPATIBILITY -D__BASEFILE__=\"RasPi\" -c ../../../RHutil/RasPi.cpp -I../../..
+../../../RHutil/RasPi.cpp: In static member function ‘static size_t SerialSimulator::println(const char*)’:
+../../../RHutil/RasPi.cpp:182:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  182 | }
+      | ^
+../../../RHutil/RasPi.cpp: In static member function ‘static size_t SerialSimulator::print(const char*)’:
+../../../RHutil/RasPi.cpp:187:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  187 | }
+      | ^
+../../../RHutil/RasPi.cpp: In static member function ‘static size_t SerialSimulator::print(unsigned int, int)’:
+../../../RHutil/RasPi.cpp:198:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  198 | }
+      | ^
+../../../RHutil/RasPi.cpp: In static member function ‘static size_t SerialSimulator::print(char)’:
+../../../RHutil/RasPi.cpp:203:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  203 | }
+      | ^
+../../../RHutil/RasPi.cpp: In static member function ‘static size_t SerialSimulator::println(char)’:
+../../../RHutil/RasPi.cpp:208:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  208 | }
+      | ^
+../../../RHutil/RasPi.cpp: In static member function ‘static size_t SerialSimulator::println(unsigned char, int)’:
+../../../RHutil/RasPi.cpp:219:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  219 | }
+      | ^
+g++ -DRASPBERRY_PI -DBCM2835_NO_DELAY_COMPATIBILITY -D__BASEFILE__=\"RHHardwareSPI\" -c -I../../.. ../../../RHHardwareSPI.cpp
+g++ -DRASPBERRY_PI -DBCM2835_NO_DELAY_COMPATIBILITY -D__BASEFILE__=\"RH_RF69\" -c -I../../.. ../../../RH_RF69.cpp
+g++ -DRASPBERRY_PI -DBCM2835_NO_DELAY_COMPATIBILITY -D__BASEFILE__=\"RH_RF95\" -c -I../../.. ../../../RH_RF95.cpp
+g++ -DRASPBERRY_PI -DBCM2835_NO_DELAY_COMPATIBILITY -D__BASEFILE__=\"RHSPIDriver\" -c -I../../.. ../../../RHSPIDriver.cpp
+g++ -DRASPBERRY_PI -DBCM2835_NO_DELAY_COMPATIBILITY -D__BASEFILE__=\"RHGenericDriver\" -c -I../../.. ../../../RHGenericDriver.cpp
+g++ -DRASPBERRY_PI -DBCM2835_NO_DELAY_COMPATIBILITY -D__BASEFILE__=\"RHGenericSPI\" -c -I../../.. ../../../RHGenericSPI.cpp
+g++ multi_server.o RasPi.o RHHardwareSPI.o RH_RF69.o RH_RF95.o RHSPIDriver.o RHGenericDriver.o RHGenericSPI.o -lbcm2835 -o multi_server
+
