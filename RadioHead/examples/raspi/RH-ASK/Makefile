@@ -26,5 +26,8 @@ RHGenericDriver.o: $(RADIOHEADBASE)/RHGenericDriver.cpp
 RHGenericSPI.o: $(RADIOHEADBASE)/RHGenericSPI.cpp
 				$(CC) $(CFLAGS) -c $(INCLUDE) $<
 
+RH_ASK.o: $(RADIOHEADBASE)/RH_ASK.cpp
+				$(CC) $(CFLAGS) -c $(INCLUDE) $<
+
 clean:
 				rm -rf *.o rf95_client rf95_server
