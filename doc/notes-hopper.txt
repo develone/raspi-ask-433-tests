@@ -1,0 +1,20 @@
+07/23/26
+The Hopper piko2 (often referred to as Hopper for Pico 2) combines the 
+Hopper programming language with the Raspberry Pi Pico 2 microcontroller board
+Raspberry Pi Pico 2 : first look at RISC-V support (RP2350) for Hopper 
+https://www.youtube.com/watch?v=IDpIt_zKGIM
+
+The piko2 Connection: Developers can download the Hopper GitHub Repository to 
+write code in the Hopper IDE, compile it into .uf2 files, and flash it directly 
+onto their Raspberry Pi Pico 2. Hopper brings complex software features 
+(like hierarchical data parsing, Wi-Fi connectivity on the Pico 2W, 
+and SD card support) to these small hardware boards.
+https://www.youtube.com/watch?v=IDpIt_zKGIM
+
+https://www.youtube.com/watch?v=zsVkZkogYAg
+
+https://github.com/sillycowvalley/Hopper/tree/main
+Tx
+https://gist.github.com/sillycowvalley/636a6fe185f34b0ddd28a43e7b486239
+Rx
+https://gist.github.com/sillycowvalley/b32f555ba004aa22beb7ff19078e1e7b
